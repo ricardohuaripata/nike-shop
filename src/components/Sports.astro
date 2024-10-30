@@ -1,0 +1,111 @@
+---
+let items = [
+  {
+    title: "Running",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/a3c971bc-bc0a-4c0c-8bdf-e807a3027e53/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Fútbol",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/e4695209-3f23-4a05-a9f9-d0edde31b653/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Baloncesto",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/e36a4a2b-4d3f-4d1c-bc75-d6057b7cec87/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Gym y training",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/e36a4a2b-4d3f-4d1c-bc75-d6057b7cec87/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Tenis",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/7ce96f81-bf80-45b9-918e-f2534f14015d/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Yoga",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/6be55ac6-0243-42d6-87d0-a650074c658c/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Skateboard",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/608705dc-dea5-4450-b68f-e624cf1ed2a7/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+  {
+    title: "Danza",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_654,c_limit/c779e4f6-7d91-46c3-9282-39155e0819e5/nike-just-do-it.jpg",
+    img_width: "654px",
+    img_height: "446px",
+  },
+];
+---
+
+<section class="my-14 px-6 md:px-12">
+  <h2
+    class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5 transition-[font-size] duration-300"
+  >
+    Filtrar por deporte
+  </h2>
+  <div class="w-full overflow-x-scroll" style="scroll-snap-type: x mandatory;">
+    <ul class="flex gap-3 pb-8">
+      {
+        items.map((item) => (
+          <li class="carousel-item relative">
+            <img
+              src={item.img_src}
+              alt={item.title}
+              width={item.img_width}
+              height={item.img_height}
+              class="w-full"
+            />
+            <a
+              href="/"
+              class="absolute bottom-6 left-6 px-4 py-2 bg-white rounded-full hover:bg-gray-200"
+            >
+              <p class="font-medium">{item.title}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(33.33% - 0.5rem);
+
+    /* Responsive */
+    @media (max-width: 1600px) {
+      width: calc(30% - 0.5rem);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(75% - 0.5rem);
+    }
+  }
+</style>

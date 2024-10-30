@@ -1,39 +1,82 @@
 ---
-import Card from "./Card.astro";
+let items = [
+  {
+    title: "Chándal Nike Tech Woven",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/a2e5962e-238d-4379-85cc-1939ba03248d/nike-just-do-it.jpg",
+    img_width: "594px",
+    img_height: "742px",
+  },
+  {
+    title: "Mad Voltage Pack",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/d9454414-2509-4274-b3f8-621c7dd5270f/image.png",
+    img_width: "594px",
+    img_height: "742px",
+  },
+  {
+    title: "Productos de invierno",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/65ff09a6-0112-4b05-a186-dd6c0c779434/nike-just-do-it.jpg",
+    img_width: "594px",
+    img_height: "742px",
+  },
+  {
+    title: "Nike Style By: Cortez",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/3089af8d-985a-43fa-9f42-6c8c4465fa89/nike-just-do-it.jpg",
+    img_width: "594px",
+    img_height: "742px",
+  },
+];
 ---
 
 <section class="my-14 px-6 md:px-12">
-  <h2 class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5">
+  <h2
+    class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5 transition-[font-size] duration-300"
+  >
     Lo mejor y más nuevo
   </h2>
   <div class="w-full overflow-x-scroll" style="scroll-snap-type: x mandatory;">
     <ul class="flex gap-3 pb-8">
-      <Card
-        title="Chándal Nike Tech Woven"
-        img_src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/a2e5962e-238d-4379-85cc-1939ba03248d/nike-just-do-it.jpg"
-        img_width="594px"
-        img_height="742px"
-      />
-      <Card
-        title="Mad Voltage Pack"
-        img_src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/d9454414-2509-4274-b3f8-621c7dd5270f/image.png"
-        img_width="594px"
-        img_height="742px"
-      />
-      <Card
-        title="Productos de invierno"
-        img_src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/65ff09a6-0112-4b05-a186-dd6c0c779434/nike-just-do-it.jpg"
-        img_width="594px"
-        img_height="742px"
-      />
-      <Card
-        title="Nike Style By: Cortez"
-        img_src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_742,c_limit/3089af8d-985a-43fa-9f42-6c8c4465fa89/nike-just-do-it.jpg"
-        img_width="594px"
-        img_height="742px"
-      />
+      {
+        items.map((item) => (
+          <li class="carousel-item">
+            <img
+              src={item.img_src}
+              alt={item.title}
+              width={item.img_width}
+              height={item.img_height}
+              class="w-full"
+            />
+            <a href="/">
+              <p class="text-xl xl:text-2xl font-medium hover:text-gray-700 transition-[font-size] duration-300">
+                {item.title}
+              </p>
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>
 
-<style></style>
+<style>
+  .carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(33.33% - 0.5rem);
+
+    /* Responsive */
+    @media (max-width: 1600px) {
+      width: calc(30% - 0.5rem);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(75% - 0.5rem);
+    }
+  }
+</style>
