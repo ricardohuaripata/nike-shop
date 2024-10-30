@@ -1,0 +1,440 @@
+<header class="flex justify-between items-center px-6 sm:px-12 sticky top-0 z-20 bg-white">
+  <nav>
+    <a href="/">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        viewBox="0 0 24 24"
+        role="img"
+        width="75px"
+        height="75px"
+        fill="none"
+        ><path
+          fill="currentColor"
+          fill-rule="evenodd"
+          d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z"
+          clip-rule="evenodd"></path></svg
+      >
+    </a>
+  </nav>
+  <nav>
+    <ul class="hidden lg:flex gap-5 font-semibold">
+      <li><a href="/">Novedades y destacados</a></li>
+      <li><a href="/">Hombre</a></li>
+      <li><a href="/">Mujer</a></li>
+      <li><a href="/">Niño/a</a></li>
+      <li><a href="/">Ofertas</a></li>
+    </ul>
+  </nav>
+  <nav>
+    <ul class="flex items-center gap-2">
+      <li class="hidden lg:block">
+        <form>
+          <label for="default-search" class="mb-2 text-sm font-medium sr-only"
+            >Search</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              class="block w-48 p-3 ps-10 text-sm border border-gray-300 rounded-lg bg-gray-50"
+              placeholder="Buscar"
+              required
+            />
+          </div>
+        </form>
+      </li>
+      <li>
+        <button class="p-2 rounded-full hover:bg-gray-200">
+          <a href="/">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="none"
+              ><path
+                stroke="currentColor"
+                stroke-width="1.5"
+                d="M16.794 3.75c1.324 0 2.568.516 3.504 1.451a4.96 4.96 0 010 7.008L12 20.508l-8.299-8.299a4.96 4.96 0 010-7.007A4.923 4.923 0 017.205 3.75c1.324 0 2.568.516 3.504 1.451l.76.76.531.531.53-.531.76-.76a4.926 4.926 0 013.504-1.451"
+              ></path></svg
+            ></a
+          ></button
+        >
+      </li>
+      <li>
+        <button class="p-2 rounded-full hover:bg-gray-200">
+          <a href="/"
+            ><svg
+              aria-hidden="true"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              width="24px"
+              height="24px"
+              fill="none"
+              ><path
+                stroke="currentColor"
+                stroke-width="1.5"
+                d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
+              ></path></svg
+            ></a
+          ></button
+        >
+      </li>
+      <li class="flex lg:hidden">
+        <!-- drawer init and show -->
+        <button
+          type="button"
+          data-drawer-target="drawer-right-example"
+          data-drawer-show="drawer-right-example"
+          data-drawer-placement="right"
+          aria-controls="drawer-right-example"
+          class="p-2 rounded-full hover:bg-gray-200"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            viewBox="0 0 24 24"
+            role="img"
+            width="24px"
+            height="24px"
+            fill="none"
+            ><path
+              stroke="currentColor"
+              stroke-width="1.5"
+              d="M21 5.25H3M21 12H3m18 6.75H3"></path></svg
+          >
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<!-- drawer component -->
+<div
+  id="drawer-right-example"
+  class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 max-w-full"
+  tabindex="-1"
+  aria-labelledby="drawer-right-label"
+>
+  <div class="flex justify-end">
+    <button
+      type="button"
+      data-drawer-hide="drawer-right-example"
+      aria-controls="drawer-right-example"
+      class="p-2 rounded-full hover:bg-gray-200"
+    >
+      <svg
+        aria-hidden="true"
+        class="w-6"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <span class="sr-only">Close menu</span>
+    </button>
+  </div>
+
+  <div class="py-4 overflow-y-auto text-2xl">
+    <ul class="space-y-2 font-medium">
+      <li>
+        <button
+          id="dropdownNavbar1Link"
+          data-dropdown-toggle="dropdownNavbar1"
+          class="flex items-center justify-between text-left w-full py-2 px-3 hover:text-gray-500"
+          >Novedades y destacados <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownNavbar1"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700"
+            aria-labelledby="dropdownLargeButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Destacados</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Compra los iconos</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Descubre el deporte</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Tendecias</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <button
+          id="dropdownNavbar2Link"
+          data-dropdown-toggle="dropdownNavbar2"
+          class="flex items-center justify-between text-left w-full py-2 px-3 hover:text-gray-500"
+          >Hombre <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownNavbar2"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700"
+            aria-labelledby="dropdownLargeButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Destacados</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Zapatillas</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Ropa</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Descubre el deporte</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Accesorios y equipamiento</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <button
+          id="dropdownNavbar3Link"
+          data-dropdown-toggle="dropdownNavbar3"
+          class="flex items-center justify-between text-left w-full py-2 px-3 hover:text-gray-500"
+          >Mujer <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownNavbar3"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700"
+            aria-labelledby="dropdownLargeButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Destacados</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Zapatillas</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Ropa</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Descubre el deporte</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Accesorios y equipamiento</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <button
+          id="dropdownNavbar4Link"
+          data-dropdown-toggle="dropdownNavbar4"
+          class="flex items-center justify-between text-left w-full py-2 px-3 hover:text-gray-500"
+          >Niño/a <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownNavbar4"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700"
+            aria-labelledby="dropdownLargeButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Destacados</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Zapatillas</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Ropa</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Niño/a por edad</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Accesorios y equipamiento</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <button
+          id="dropdownNavbar5Link"
+          data-dropdown-toggle="dropdownNavbar5"
+          class="flex items-center justify-between text-left w-full py-2 px-3 hover:text-gray-500"
+          >Ofertas <svg
+            class="w-2.5 h-2.5 ms-2.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 4 4 4-4"></path>
+          </svg></button
+        >
+        <!-- Dropdown menu -->
+        <div
+          id="dropdownNavbar5"
+          class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+        >
+          <ul
+            class="py-2 text-sm text-gray-700"
+            aria-labelledby="dropdownLargeButton"
+          >
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Ofertas</a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Ofertas para hombre</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Ofertas para mujer</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Ofertas para niño/a</a
+              >
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Ofertas por deporte</a
+              >
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
