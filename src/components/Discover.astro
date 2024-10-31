@@ -1,0 +1,87 @@
+---
+let items = [
+  {
+    title: "Mujer",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_563,c_limit/bbdf6db7-16db-487b-9f3b-55fbd4a9a12a/nike-just-do-it.jpg",
+    img_width: "450px",
+    img_height: "563px",
+  },
+  {
+    title: "Hombre",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_563,c_limit/8c47d0e6-78a7-4f39-8b39-092d7288ac4b/nike-just-do-it.jpg",
+    img_width: "450px",
+    img_height: "563px",
+  },
+  {
+    title: "Niño/a",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_563,c_limit/c783fe93-2375-4d2e-974c-ae6d502a58e4/nike-just-do-it.jpg",
+    img_width: "450px",
+    img_height: "563px",
+  },
+  {
+    title: "Adolescente",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_563,c_limit/d4550266-568c-4221-bfcd-60a6de819f67/nike-just-do-it.jpg",
+    img_width: "450px",
+    img_height: "563px",
+  },
+];
+---
+
+<section class="my-14 px-6 md:px-12">
+  <h2
+    class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5 transition-[font-size] duration-300"
+  >
+    Descubre más
+  </h2>
+  <div class="w-full overflow-x-scroll" style="scroll-snap-type: x mandatory;">
+    <ul class="flex gap-3 pb-8">
+      {
+        items.map((item) => (
+          <li class="carousel-item relative">
+            <img
+              src={item.img_src}
+              alt={item.title}
+              width={item.img_width}
+              height={item.img_height}
+              class="w-full"
+            />
+            <a
+              href="/"
+              class="absolute bottom-6 left-6 px-4 py-2 bg-white rounded-full hover:bg-gray-200"
+            >
+              <p class="font-medium">{item.title}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(33.33% - 0.5rem);
+
+    /* Responsive */
+    @media (max-width: 1600px) {
+      width: calc(30% - 0.5rem);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(75% - 0.5rem);
+    }
+
+    @media (max-width: 340px) {
+      width: 400px;
+    }
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+let items = [
+  {
+    title: "Tu acceso exclusivo",
+    subtitle: "Productos para Members",
+    action: "Comprar",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/82581424-385a-4f79-816d-0f91e6a531a3/nike-just-do-it.png",
+    img_width: "594px",
+    img_height: "594px",
+  },
+  {
+    title: "Cómo damos las gracias",
+    subtitle: "Recompensas para Members",
+    action: "Celébralo",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/d9ef237f-b6cf-40ca-8432-928a0bb3abae/nike-just-do-it.jpg",
+    img_width: "594px",
+    img_height: "594px",
+  },
+  {
+    title: "Muévete como quieras",
+    subtitle: "Deporte y bienstar",
+    action: "Muevéte",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/e3d043ee-e826-448f-9213-3ab2cdef1f10/nike-just-do-it.jpg",
+    img_width: "594px",
+    img_height: "594px",
+  },
+  {
+    title: "Tu servicios de personalización",
+    subtitle: "Nike By You",
+    action: "Personalizar",
+    img_src:
+      "https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/h_594,c_limit/5e36df8e-007f-4b18-bea3-47af5a7ea0d2/nike-just-do-it.png",
+    img_width: "594px",
+    img_height: "594px",
+  },
+];
+---
+
+<section class="my-14 px-6 md:px-12">
+  <h2
+    class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5 transition-[font-size] duration-300"
+  >
+    Nike Membership
+  </h2>
+  <div class="w-full overflow-x-scroll" style="scroll-snap-type: x mandatory;">
+    <ul class="flex gap-3 pb-8">
+      {
+        items.map((item) => (
+          <li class="carousel-item relative">
+            <img
+              src={item.img_src}
+              alt={item.title}
+              width={item.img_width}
+              height={item.img_height}
+              class="w-full"
+            />
+            <div class="absolute bottom-6 left-6 flex flex-col items-start gap-2 sm:gap-4">
+              <p class="text-white font-medium">{item.subtitle}</p>
+              <p class="text-white font-medium text-xl sm::text-2xl 2xl:text-3xl">
+                {item.title}
+              </p>
+              <a
+                href="/"
+                class="flex px-4 py-2 bg-white rounded-full hover:bg-gray-200"
+              >
+                <p class="font-medium">{item.action}</p>
+              </a>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: calc(33.33% - 0.5rem);
+
+    /* Responsive */
+    @media (max-width: 1600px) {
+      width: calc(30% - 0.5rem);
+    }
+
+    @media (max-width: 1424px) {
+      width: calc(45% - 0.5rem);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(75% - 0.5rem);
+    }
+
+    @media (max-width: 460px) {
+      width: 400px;
+    }
+  }
+</style>

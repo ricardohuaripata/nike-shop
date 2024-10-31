@@ -1,0 +1,113 @@
+---
+let items = [
+  {
+    title: "Nike Tech Fleece Windrunner x Central Cee",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/60ad8d2c-8b81-4d45-988e-0f1039b1c6c8/tech-fleece-windrunner-central-cee-sudadera-con-capucha-con-cremallera-completa-3HCfnf.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 129.99,
+    category: "Sudadera con capucha con cremallera completa - Hombre",
+  },
+  {
+    title: "Nike Air Max 95",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/22d56cb9-2759-46c3-b8f9-8f87ae587aa7/air-max-95-zapatillas-qnH1M6.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 189.99,
+    category: "Zapatillas - Hombre",
+  },
+  {
+    title: "Nike Air Force 1 LX",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/d541b4dc-a3e4-40bd-8681-7b6cf67ed47a/air-force-1-lx-zapatillas-dH59T6.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 139.99,
+    category: "Zapatillas - Hombre",
+  },
+  {
+    title: "Nike Dunk Low",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/2e1f3dea-a0db-4a3e-b781-c44e9d97fb84/dunk-low-zapatillas-nbnv0q.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 129.99,
+    category: "Zapatillas - Hombre",
+  },
+  {
+    title: "Nike SB PS8",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/e1c513d9-e695-45e1-8c74-19da12da96b4/sb-ps8-zapatillas-vn1V11.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 119.99,
+    category: "Zapatillas - Hombre",
+  },
+  {
+    title: "Air Jordan 4 Retro",
+    img_src:
+      "https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_1.0/h_594,c_limit/b203d6a0-1a9a-4f75-a49e-bfbd4636fdba/air-jordan-4-retro-zapatillas-nino-a-VJpfrH.png",
+    img_width: "594px",
+    img_height: "594px",
+    price: 149.99,
+    category: "Zapatillas - Niño/a",
+  },
+];
+---
+
+<section class="my-14 px-6 md:px-12">
+  <h2
+    class="text-2xl sm:text-3xl xl:text-4xl font-medium mb-5 transition-[font-size] duration-300"
+  >
+    Novedades de la semana
+  </h2>
+  <div class="w-full overflow-x-scroll" style="scroll-snap-type: x mandatory;">
+    <ul class="flex gap-3 pb-8">
+      {
+        items.map((item) => (
+          <li class="carousel-item">
+            <img
+              src={item.img_src}
+              alt={item.title}
+              width={item.img_width}
+              height={item.img_height}
+              class="w-full"
+            />
+            <div class="flex flex-col gap-2">
+              <div>
+                <a href="/">
+                  <p class="font-medium hover:text-gray-700">{item.title}</p>
+                </a>
+                <p class="font-medium text-gray-500">{item.category}</p>
+              </div>
+
+              <p class="font-medium">{item.price} €</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel-item {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: calc(33.33% - 0.5rem);
+
+    /* Responsive */
+    @media (max-width: 1600px) {
+      width: calc(30% - 0.5rem);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(75% - 0.5rem);
+    }
+  }
+</style>
