@@ -1,0 +1,116 @@
+---
+import Accordion from "./Accordion.astro";
+
+let footerLinks = [
+  {
+    title: "Recursos",
+    links: [
+      { title: "Tarjetas de regalo", href: "/" },
+      { title: "Buscar un tienda", href: "/" },
+      { title: "Nike Journal", href: "/" },
+      { title: "Hazte Member", href: "/" },
+      { title: "Descuenta para estudiantes", href: "/" },
+      { title: "Comentarios", href: "/" },
+      { title: "Códigos promocionales", href: "/" },
+    ],
+  },
+  {
+    title: "Ayuda",
+    links: [
+      { title: "Obtener ayuda", href: "/" },
+      { title: "Estado del pedido", href: "/" },
+      { title: "Envíos y entregas", href: "/" },
+      { title: "Devoluciones", href: "/" },
+      { title: "Opciones de pago", href: "/" },
+      { title: "Contacto", href: "/" },
+      { title: "Evaluaciones", href: "/" },
+      { title: "Ayuda con los códigos promocionales de Nike", href: "/" },
+    ],
+  },
+  {
+    title: "Empresa",
+    links: [
+      { title: "Acerca de Nike", href: "/" },
+      { title: "Novedades", href: "/" },
+      { title: "Empleo", href: "/" },
+      { title: "Inversores", href: "/" },
+      { title: "Sostenibilidad", href: "/" },
+      { title: "Propósito", href: "/" },
+    ],
+  },
+];
+---
+
+<footer class="my-24 px-6 md:px-12 bg-white flex flex-col gap-12">
+  <div
+    class="flex flex-col lg:flex-row lg:flex-wrap justify-between gap-6 font-medium"
+  >
+    {
+      footerLinks.map((section, i) => (
+        <div class="hidden lg:flex flex-col gap-6">
+          <p>
+            <a href="/">{section.title}</a>
+          </p>
+          <ul class="flex flex-col gap-2 text-gray-500">
+            {section.links.map((link) => (
+              <li>
+                <a href={link.href}>{link.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Accordion elementId={(i + 1).toString()} title={section.title} links={section.links}/>
+      ))
+    }
+
+    <p>
+      <a href="/" class="flex items-center gap-1"
+        ><svg
+          aria-hidden="true"
+          class="css-npy3on"
+          focusable="false"
+          viewBox="0 0 24 24"
+          role="img"
+          width="16px"
+          height="16px"
+          fill="none"
+          ><path
+            stroke="currentColor"
+            stroke-miterlimit="10"
+            stroke-width="1.5"
+            d="M21.75 12A9.75 9.75 0 0112 21.75M21.75 12A9.75 9.75 0 0012 2.25M21.75 12c0 2.071-4.365 3.75-9.75 3.75S2.25 14.071 2.25 12m19.5 0c0-2.071-4.365-3.75-9.75-3.75S2.25 9.929 2.25 12M12 21.75A9.75 9.75 0 012.25 12M12 21.75c2.9 0 5.25-4.365 5.25-9.75S14.9 2.25 12 2.25m0 19.5c-2.9 0-5.25-4.365-5.25-9.75S9.1 2.25 12 2.25M2.25 12A9.75 9.75 0 0112 2.25"
+          ></path></svg
+        >España</a
+      >
+    </p>
+  </div>
+  <ul
+    class="flex flex-col lg:flex-row lg:flex-wrap gap-4 lg:gap-x-6 font-medium text-gray-500"
+  >
+    <li>
+      <a href="/" class="hover:text-black"
+        >© 2024 Nike, Inc. Todos los derechos reservados</a
+      >
+    </li>
+    <li>
+      <a href="/" class="hover:text-black">Guías</a>
+    </li>
+    <li>
+      <a href="/" class="hover:text-black">Términos de uso</a>
+    </li>
+    <li>
+      <a href="/" class="hover:text-black">Términos de ventas</a>
+    </li>
+    <li>
+      <a href="/" class="hover:text-black">Aviso legal</a>
+    </li>
+    <li>
+      <a href="/" class="hover:text-black">Política de privacidad y cookies</a>
+    </li>
+    <li>
+      <a href="/" class="hover:text-black"
+        >Configuración de privacidad y cookies</a
+      >
+    </li>
+  </ul>
+</footer>
